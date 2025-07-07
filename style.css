@@ -1,0 +1,134 @@
+body {
+  background: #f9f9f9;
+  color: #111;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1, h2, p {
+  margin: 0;
+  text-align: center;
+}
+
+.start-screen {
+  text-align: center;
+}
+
+#start-btn {
+  margin-top: 20px;
+  padding: 14px 40px;
+  background-color: #000;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#start-btn:hover {
+  background-color: #222;
+  transform: scale(1.05);
+}
+
+.container {
+  text-align: center;
+}
+
+.icons {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+}
+
+.icon-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon-box img {
+  width: 100px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
+  filter: grayscale(100%) brightness(0.9);
+}
+
+.icon-box img:hover {
+  transform: scale(1.1);
+  filter: grayscale(0%) brightness(1.1);
+}
+
+.icon-box p {
+  margin-top: 10px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.music-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #181818;
+  color: #fff;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.6);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.music-bar img {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.music-bar .info {
+  flex-grow: 1;
+}
+
+.music-bar .playing-label {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #b3b3b3;
+}
+
+.music-bar .playing-label strong {
+  color: white;
+}
+
+/* Animaciones */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+.delay {
+  animation-delay: 0.5s;
+}
+
+.delay-2 {
+  animation-delay: 1s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
