@@ -10,6 +10,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  transition: background 0.5s ease, color 0.5s ease;
 }
 
 h1, h2, p {
@@ -21,7 +22,7 @@ h1, h2, p {
   text-align: center;
 }
 
-#start-btn {
+#start-btn, #theme-toggle {
   margin-top: 20px;
   padding: 14px 40px;
   background-color: #000;
@@ -32,11 +33,12 @@ h1, h2, p {
   border-radius: 30px;
   cursor: pointer;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-#start-btn:hover {
-  background-color: #222;
-  transform: scale(1.05);
+#start-btn:hover, #theme-toggle:hover {
+  background-color: #1a1a1a;
+  transform: scale(1.08);
 }
 
 .container {
@@ -87,6 +89,7 @@ h1, h2, p {
   gap: 15px;
   box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.6);
   font-family: 'Montserrat', sans-serif;
+  transition: background 0.5s ease, color 0.5s ease;
 }
 
 .music-bar img {
@@ -114,8 +117,9 @@ h1, h2, p {
 /* Animaciones */
 .fade-in {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(20px) scale(0.98);
   animation: fadeInUp 1s ease forwards;
+  animation-fill-mode: forwards;
 }
 
 .delay {
@@ -129,6 +133,93 @@ h1, h2, p {
 @keyframes fadeInUp {
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
+}
+
+.float-text {
+  display: inline-block;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Tema Oscuro */
+body.dark-mode {
+  background: #111;
+  color: #f9f9f9;
+}
+
+body.dark-mode .music-bar {
+  background: #282828;
+  color: #eee;
+}
+
+body.dark-mode .music-bar .playing-label {
+  color: #ccc;
+}
+
+body.dark-mode #start-btn,
+body.dark-mode #theme-toggle {
+  background-color: #fff;
+  color: #000;
+}
+
+body.dark-mode #start-btn:hover,
+body.dark-mode #theme-toggle:hover {
+  background-color: #ddd;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .icons {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .icon-box img {
+    width: 80px;
+  }
+
+  .music-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .music-bar img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Botón de mute */
+.mute-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.mute-btn:hover {
+  transform: scale(1.2);
+}
+
+body.dark-mode .mute-btn {
+  color: #eee;
+}
+
+.music-bar .controls {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
 }

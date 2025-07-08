@@ -4,13 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>24Clicks</title>
+
+  <meta name="description" content="Conectá con 24Clicks en sus redes sociales.">
+  <meta name="theme-color" content="#000000" />
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="dark-mode">
   <!-- Pantalla de inicio -->
   <div id="start-screen" class="start-screen">
-    <h1 class="fade-in">Conectá con 24Clicks</h1>
+    <h1 class="fade-in float-text" style="color: white;">Conectá con 24Clicks</h1>
     <p class="fade-in delay">Elegí una red para ver mi perfil</p>
     <button id="start-btn" class="fade-in delay-2">Entrar</button>
   </div>
@@ -18,16 +23,20 @@
   <!-- Contenido principal -->
   <div id="main-content" class="container" style="display: none;">
     <h2 class="fade-in">Elegí una plataforma:</h2>
+
+    <!-- Botón para cambiar tema -->
+    <button id="theme-toggle" class="fade-in" style="margin-top: 20px;">Cambiar Tema</button>
+
     <div class="icons">
       <div class="icon-box">
         <a href="https://www.tiktok.com/@soy24clicks" target="_blank" onclick="playClick()">
-          <img src="assets/tiktok.png" alt="TikTok">
+          <img src="assets/tiktok.png" alt="Perfil de TikTok de 24Clicks">
         </a>
         <p>TikTok</p>
       </div>
       <div class="icon-box">
         <a href="https://es.namemc.com/profile/24Clicks" target="_blank" onclick="playClick()">
-          <img src="assets/namemc.png" alt="NameMC">
+          <img src="assets/namemc.png" alt="Perfil NameMC de 24Clicks">
         </a>
         <p>NameMC</p>
       </div>
@@ -36,11 +45,14 @@
 
   <!-- Barra de música estilo Spotify -->
   <div class="music-bar" id="music-bar" style="display: none;">
-    <img src="assets/505-cover.jpg" alt="Cover">
+    <img src="assets/505-cover.jpg" alt="Portada del tema 505">
     <div class="info">
       <p class="playing-label">
         🎵 Estás escuchando: <strong>505</strong> — Arctic Monkeys
       </p>
+    </div>
+    <div class="controls">
+      <button id="mute-btn" class="mute-btn">🔊</button>
     </div>
     <audio id="bg-music" loop>
       <source src="assets/505-short.mp3" type="audio/mp3" />
